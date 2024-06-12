@@ -1,0 +1,365 @@
+{
+    "function": "div",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "divps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double",
+                "double"
+            ],
+            "instr": [
+                "divpd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t",
+                "std::int64_t"
+            ],
+            "instr": [
+                "movq %xmm0,%rax",
+                "movq %xmm1,%rcx",
+                "movhlps %xmm0,%xmm2",
+                "cqto",
+                "movhlps %xmm1,%xmm3",
+                "idivq %rcx",
+                "movq %xmm3,%rsi",
+                "movq %rax,%rcx",
+                "movq %xmm2,%rax",
+                "cqto",
+                "movq %rcx,%xmm0",
+                "idivq %rsi",
+                "movq %rax,%xmm1",
+                "movlhps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t",
+                "std::int32_t"
+            ],
+            "instr": [
+                "movd %xmm0,%eax",
+                "movd %xmm1,%ecx",
+                "pshufd $238,%xmm0,%xmm3",
+                "cltd",
+                "pshufd $85,%xmm0,%xmm0",
+                "pshufd $238,%xmm1,%xmm4",
+                "idivl %ecx",
+                "pshufd $85,%xmm1,%xmm1",
+                "movd %xmm1,%ecx",
+                "movd %eax,%xmm2",
+                "movd %xmm0,%eax",
+                "cltd",
+                "movaps %xmm2,%xmm0",
+                "idivl %ecx",
+                "movd %xmm4,%ecx",
+                "pshufd $85,%xmm4,%xmm4",
+                "movd %eax,%xmm1",
+                "movd %xmm3,%eax",
+                "pshufd $85,%xmm3,%xmm3",
+                "cltd",
+                "movlhps %xmm1,%xmm0",
+                "idivl %ecx",
+                "movd %xmm4,%ecx",
+                "pshufd $136,%xmm0,%xmm0",
+                "movd %eax,%xmm2",
+                "movd %xmm3,%eax",
+                "cltd",
+                "idivl %ecx",
+                "movd %eax,%xmm1",
+                "movlhps %xmm1,%xmm2",
+                "pshufd $136,%xmm2,%xmm1",
+                "movlhps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t",
+                "std::int16_t"
+            ],
+            "instr": [
+                "pextrw $0,%xmm0,%eax",
+                "pextrw $0,%xmm1,%ecx",
+                "pextrw $1,%xmm1,%esi",
+                "cwtl",
+                "movswl %cx,%ecx",
+                "pshufd $238,%xmm0,%xmm5",
+                "movswl %si,%esi",
+                "pshufd $1,%xmm0,%xmm7",
+                "pshufd $1,%xmm1,%xmm6",
+                "pshufd $238,%xmm1,%xmm2",
+                "cltd",
+                "idivl %ecx",
+                "pxor %xmm4,%xmm4",
+                "pxor %xmm3,%xmm3",
+                "movl %eax,%ecx",
+                "pextrw $1,%xmm0,%eax",
+                "cwtl",
+                "movd %ecx,%xmm0",
+                "pextrw $0,%xmm6,%ecx",
+                "cltd",
+                "movswl %cx,%ecx",
+                "idivl %esi",
+                "pextrw $1,%xmm6,%esi",
+                "pshufd $1,%xmm2,%xmm6",
+                "movswl %si,%esi",
+                "pinsrw $1,%eax,%xmm0",
+                "pextrw $0,%xmm7,%eax",
+                "cwtl",
+                "punpckldq %xmm4,%xmm0",
+                "cltd",
+                "punpcklqdq %xmm3,%xmm0",
+                "idivl %ecx",
+                "movl %eax,%ecx",
+                "pextrw $1,%xmm7,%eax",
+                "pshufd $1,%xmm5,%xmm7",
+                "cwtl",
+                "movd %ecx,%xmm1",
+                "pextrw $0,%xmm2,%ecx",
+                "cltd",
+                "movswl %cx,%ecx",
+                "idivl %esi",
+                "pextrw $1,%xmm2,%esi",
+                "movswl %si,%esi",
+                "pinsrw $1,%eax,%xmm1",
+                "pextrw $0,%xmm5,%eax",
+                "cwtl",
+                "punpckldq %xmm4,%xmm1",
+                "cltd",
+                "punpcklqdq %xmm3,%xmm1",
+                "idivl %ecx",
+                "movlhps %xmm1,%xmm0",
+                "pshufd $136,%xmm0,%xmm0",
+                "movl %eax,%ecx",
+                "pextrw $1,%xmm5,%eax",
+                "cwtl",
+                "movd %ecx,%xmm1",
+                "pextrw $0,%xmm6,%ecx",
+                "cltd",
+                "movswl %cx,%ecx",
+                "idivl %esi",
+                "pextrw $1,%xmm6,%esi",
+                "movswl %si,%esi",
+                "pinsrw $1,%eax,%xmm1",
+                "pextrw $0,%xmm7,%eax",
+                "cwtl",
+                "punpckldq %xmm4,%xmm1",
+                "cltd",
+                "punpcklqdq %xmm3,%xmm1",
+                "idivl %ecx",
+                "movl %eax,%ecx",
+                "pextrw $1,%xmm7,%eax",
+                "cwtl",
+                "movd %ecx,%xmm2",
+                "cltd",
+                "idivl %esi",
+                "pinsrw $1,%eax,%xmm2",
+                "punpckldq %xmm4,%xmm2",
+                "punpcklqdq %xmm3,%xmm2",
+                "movlhps %xmm2,%xmm1",
+                "pshufd $136,%xmm1,%xmm1",
+                "movlhps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t",
+                "std::int8_t"
+            ],
+            "instr": [
+                "subq $136,%rsp",
+                ".cfi_def_cfa_offset144",
+                "pshufd $238,%xmm1,%xmm4",
+                "pshufd $238,%xmm0,%xmm3",
+                "movq %fs:40,%rax",
+                "movq %rax,120(%rsp)",
+                "xorl %eax,%eax",
+                "movaps %xmm3,32(%rsp)",
+                "movaps %xmm4,16(%rsp)",
+                "call _ZZN3eve6detail8self_divIaNS_10sse_abi_v04wideIaNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IaNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa 16(%rsp),%xmm4",
+                "movdqa 32(%rsp),%xmm3",
+                "movaps %xmm0,(%rsp)",
+                "movdqa %xmm4,%xmm1",
+                "movdqa %xmm3,%xmm0",
+                "call _ZZN3eve6detail8self_divIaNS_10sse_abi_v04wideIaNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IaNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa (%rsp),%xmm2",
+                "movdqa %xmm0,%xmm1",
+                "movaps %xmm2,%xmm0",
+                "movlhps %xmm1,%xmm0",
+                "movq 120(%rsp),%rax",
+                "subq %fs:40,%rax",
+                "jne .L154",
+                "addq $136,%rsp",
+                ".cfi_remember_state",
+                ".cfi_def_cfa_offset8",
+                ".L154:",
+                ".cfi_restore_state",
+                "call __stack_chk_fail@PLT"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movq %xmm1,%rcx",
+                "movq %xmm0,%rax",
+                "movhlps %xmm0,%xmm2",
+                "xorl %edx,%edx",
+                "divq %rcx",
+                "movhlps %xmm1,%xmm3",
+                "xorl %edx,%edx",
+                "movq %xmm3,%rsi",
+                "movq %rax,%rcx",
+                "movq %xmm2,%rax",
+                "divq %rsi",
+                "movq %rcx,%xmm0",
+                "movq %rax,%xmm1",
+                "movlhps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "jmp _Z12func_div_139N3eve10sse_abi_v04wideIjNS_5fixedILl4EEEEES4_"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "jmp _Z12func_div_140N3eve10sse_abi_v04wideItNS_5fixedILl8EEEEES4_"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "subq $136,%rsp",
+                ".cfi_def_cfa_offset144",
+                "pshufd $238,%xmm1,%xmm4",
+                "pshufd $238,%xmm0,%xmm3",
+                "movq %fs:40,%rax",
+                "movq %rax,120(%rsp)",
+                "xorl %eax,%eax",
+                "movaps %xmm3,32(%rsp)",
+                "movaps %xmm4,16(%rsp)",
+                "call _ZZN3eve6detail8self_divIhNS_10sse_abi_v04wideIhNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IhNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa 16(%rsp),%xmm4",
+                "movdqa 32(%rsp),%xmm3",
+                "movaps %xmm0,(%rsp)",
+                "movdqa %xmm4,%xmm1",
+                "movdqa %xmm3,%xmm0",
+                "call _ZZN3eve6detail8self_divIhNS_10sse_abi_v04wideIhNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IhNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa (%rsp),%xmm2",
+                "movdqa %xmm0,%xmm1",
+                "movaps %xmm2,%xmm0",
+                "movlhps %xmm1,%xmm0",
+                "movq 120(%rsp),%rax",
+                "subq %fs:40,%rax",
+                "jne .L168",
+                "addq $136,%rsp",
+                ".cfi_remember_state",
+                ".cfi_def_cfa_offset8",
+                ".L168:",
+                ".cfi_restore_state",
+                "call __stack_chk_fail@PLT"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movq %xmm1,%rcx",
+                "movq %xmm0,%rax",
+                "movhlps %xmm0,%xmm2",
+                "xorl %edx,%edx",
+                "divq %rcx",
+                "movhlps %xmm1,%xmm3",
+                "xorl %edx,%edx",
+                "movq %xmm3,%rsi",
+                "movq %rax,%rcx",
+                "movq %xmm2,%rax",
+                "divq %rsi",
+                "movq %rcx,%xmm0",
+                "movq %rax,%xmm1",
+                "movlhps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "jmp _Z12func_div_139N3eve10sse_abi_v04wideIjNS_5fixedILl4EEEEES4_"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "jmp _Z12func_div_140N3eve10sse_abi_v04wideItNS_5fixedILl8EEEEES4_"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "subq $136,%rsp",
+                ".cfi_def_cfa_offset144",
+                "pshufd $238,%xmm1,%xmm4",
+                "pshufd $238,%xmm0,%xmm3",
+                "movq %fs:40,%rax",
+                "movq %rax,120(%rsp)",
+                "xorl %eax,%eax",
+                "movaps %xmm3,32(%rsp)",
+                "movaps %xmm4,16(%rsp)",
+                "call _ZZN3eve6detail8self_divIhNS_10sse_abi_v04wideIhNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IhNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa 16(%rsp),%xmm4",
+                "movdqa 32(%rsp),%xmm3",
+                "movaps %xmm0,(%rsp)",
+                "movdqa %xmm4,%xmm1",
+                "movdqa %xmm3,%xmm0",
+                "call _ZZN3eve6detail8self_divIhNS_10sse_abi_v04wideIhNS_5fixedILl16EEEEES5_EEDcRNS3_IT_T1_EERKT0_ENKUlS7_SB_E_clINS3_IhNS4_ILl8EEEEESH_EEDaS7_SB_.isra.0",
+                "movdqa (%rsp),%xmm2",
+                "movdqa %xmm0,%xmm1",
+                "movaps %xmm2,%xmm0",
+                "movlhps %xmm1,%xmm0",
+                "movq 120(%rsp),%rax",
+                "subq %fs:40,%rax",
+                "jne .L168",
+                "addq $136,%rsp",
+                ".cfi_remember_state",
+                ".cfi_def_cfa_offset8",
+                ".L168:",
+                ".cfi_restore_state",
+                "call __stack_chk_fail@PLT"
+            ]
+        }
+    ]
+}

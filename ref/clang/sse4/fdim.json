@@ -1,0 +1,189 @@
+{
+    "function": "fdim",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "movaps %xmm1,%xmm2",
+                "cmpleps %xmm0,%xmm2",
+                "subps %xmm1,%xmm0",
+                "andps %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double",
+                "double"
+            ],
+            "instr": [
+                "movapd %xmm1,%xmm2",
+                "cmplepd %xmm0,%xmm2",
+                "subpd %xmm1,%xmm0",
+                "andpd %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t",
+                "std::int64_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "psubq %xmm1,%xmm2",
+                "pcmpgtq %xmm0,%xmm1",
+                "pandn %xmm2,%xmm1",
+                "movdqa %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t",
+                "std::int32_t"
+            ],
+            "instr": [
+                "movdqa %xmm1,%xmm2",
+                "pcmpgtd %xmm0,%xmm2",
+                "psubd %xmm1,%xmm0",
+                "pandn %xmm0,%xmm2",
+                "movdqa %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t",
+                "std::int16_t"
+            ],
+            "instr": [
+                "movdqa %xmm1,%xmm2",
+                "pcmpgtw %xmm0,%xmm2",
+                "psubw %xmm1,%xmm0",
+                "pandn %xmm0,%xmm2",
+                "movdqa %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t",
+                "std::int8_t"
+            ],
+            "instr": [
+                "movdqa %xmm1,%xmm2",
+                "pcmpgtb %xmm0,%xmm2",
+                "psubb %xmm1,%xmm0",
+                "pandn %xmm0,%xmm2",
+                "movdqa %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movdqa .LCPI156_0(%rip),%xmm2",
+                "movdqa %xmm1,%xmm3",
+                "pxor %xmm2,%xmm3",
+                "pxor %xmm0,%xmm2",
+                "pcmpgtq %xmm3,%xmm2",
+                "psubq %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxud %xmm1,%xmm2",
+                "pcmpeqd %xmm0,%xmm2",
+                "psubd %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxuw %xmm1,%xmm2",
+                "pcmpeqw %xmm0,%xmm2",
+                "psubw %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxub %xmm1,%xmm2",
+                "pcmpeqb %xmm0,%xmm2",
+                "psubb %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movdqa .LCPI156_0(%rip),%xmm2",
+                "movdqa %xmm1,%xmm3",
+                "pxor %xmm2,%xmm3",
+                "pxor %xmm0,%xmm2",
+                "pcmpgtq %xmm3,%xmm2",
+                "psubq %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxud %xmm1,%xmm2",
+                "pcmpeqd %xmm0,%xmm2",
+                "psubd %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxuw %xmm1,%xmm2",
+                "pcmpeqw %xmm0,%xmm2",
+                "psubw %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pmaxub %xmm1,%xmm2",
+                "pcmpeqb %xmm0,%xmm2",
+                "psubb %xmm1,%xmm0",
+                "pand %xmm2,%xmm0"
+            ]
+        }
+    ]
+}

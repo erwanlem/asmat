@@ -1,0 +1,119 @@
+{
+    "function": "is_nan",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "vxorps %xmm1,%xmm1,%xmm1",
+                "vcmpunordps %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "vxorpd %xmm1,%xmm1,%xmm1",
+                "vcmpunordpd %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vxorps %xmm0,%xmm0,%xmm0"
+            ]
+        }
+    ]
+}

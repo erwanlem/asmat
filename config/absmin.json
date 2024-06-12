@@ -1,0 +1,6 @@
+{
+    "function" : "absmin",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

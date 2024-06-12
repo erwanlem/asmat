@@ -1,0 +1,128 @@
+{
+    "function": "is_positive",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "vpsrad $31,%ymm0,%ymm0",
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpxor %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpcmpgtq %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpcmpgtq %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "vpsrad $31,%ymm0,%ymm0",
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpxor %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "vpsraw $15,%ymm0,%ymm0",
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpxor %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "vpxor %xmm1,%xmm1,%xmm1",
+                "vpcmpgtb %ymm0,%ymm1,%ymm0",
+                "vpcmpeqd %ymm1,%ymm1,%ymm1",
+                "vpxor %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vpcmpeqd %ymm0,%ymm0,%ymm0"
+            ]
+        }
+    ]
+}

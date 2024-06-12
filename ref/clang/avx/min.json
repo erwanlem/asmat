@@ -1,0 +1,192 @@
+{
+    "function": "min",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "vminps %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double",
+                "double"
+            ],
+            "instr": [
+                "vminpd %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t",
+                "std::int64_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpcmpgtq %xmm3,%xmm2,%xmm2",
+                "vpcmpgtq %xmm1,%xmm0,%xmm3",
+                "vinsertf128 $1,%xmm2,%ymm3,%ymm2",
+                "vblendvpd %ymm2,%ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t",
+                "std::int32_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminsd %xmm3,%xmm2,%xmm2",
+                "vpminsd %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t",
+                "std::int16_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminsw %xmm3,%xmm2,%xmm2",
+                "vpminsw %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t",
+                "std::int8_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminsb %xmm3,%xmm2,%xmm2",
+                "vpminsb %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vmovdqa .LCPI299_0(%rip),%xmm4",
+                "vpxor %xmm4,%xmm1,%xmm5",
+                "vpxor %xmm4,%xmm0,%xmm6",
+                "vpcmpgtq %xmm5,%xmm6,%xmm5",
+                "vpxor %xmm4,%xmm3,%xmm3",
+                "vpxor %xmm4,%xmm2,%xmm2",
+                "vpcmpgtq %xmm3,%xmm2,%xmm2",
+                "vinsertf128 $1,%xmm2,%ymm5,%ymm2",
+                "vblendvpd %ymm2,%ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminud %xmm3,%xmm2,%xmm2",
+                "vpminud %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminuw %xmm3,%xmm2,%xmm2",
+                "vpminuw %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminub %xmm3,%xmm2,%xmm2",
+                "vpminub %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vmovdqa .LCPI299_0(%rip),%xmm4",
+                "vpxor %xmm4,%xmm1,%xmm5",
+                "vpxor %xmm4,%xmm0,%xmm6",
+                "vpcmpgtq %xmm5,%xmm6,%xmm5",
+                "vpxor %xmm4,%xmm3,%xmm3",
+                "vpxor %xmm4,%xmm2,%xmm2",
+                "vpcmpgtq %xmm3,%xmm2,%xmm2",
+                "vinsertf128 $1,%xmm2,%ymm5,%ymm2",
+                "vblendvpd %ymm2,%ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminud %xmm3,%xmm2,%xmm2",
+                "vpminud %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminuw %xmm3,%xmm2,%xmm2",
+                "vpminuw %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vextractf128 $1,%ymm0,%xmm2",
+                "vextractf128 $1,%ymm1,%xmm3",
+                "vpminub %xmm3,%xmm2,%xmm2",
+                "vpminub %xmm1,%xmm0,%xmm0",
+                "vinsertf128 $1,%xmm2,%ymm0,%ymm0"
+            ]
+        }
+    ]
+}

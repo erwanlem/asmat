@@ -1,0 +1,6 @@
+{
+    "function" : "dist",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

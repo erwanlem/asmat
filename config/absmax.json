@@ -1,0 +1,6 @@
+{
+    "function" : "absmax",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

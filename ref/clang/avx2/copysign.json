@@ -1,0 +1,18 @@
+{
+    "function": "copysign",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "vbroadcastsd .LCPI160_0(%rip),%ymm2",
+                "vandps %ymm2,%ymm1,%ymm1",
+                "vbroadcastsd .LCPI160_1(%rip),%ymm2",
+                "vandps %ymm2,%ymm0,%ymm0",
+                "vorps %ymm0,%ymm1,%ymm0"
+            ]
+        }
+    ]
+}

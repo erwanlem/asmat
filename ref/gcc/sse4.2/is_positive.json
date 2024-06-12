@@ -1,0 +1,149 @@
+{
+    "function": "is_positive",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "movaps %xmm0,%xmm1",
+                "pxor %xmm0,%xmm0",
+                "pcmpgtd %xmm1,%xmm0",
+                "pcmpeqd %xmm1,%xmm1",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "movq %xmm0,%rax",
+                "movapd %xmm0,%xmm1",
+                "sarq $63,%rax",
+                "movq %rax,%xmm0",
+                "pextrq $1,%xmm1,%rax",
+                "pcmpeqd %xmm1,%xmm1",
+                "sarq $63,%rax",
+                "pinsrq $1,%rax,%xmm0",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "movq %xmm0,%rax",
+                "movdqa %xmm0,%xmm1",
+                "sarq $63,%rax",
+                "movq %rax,%xmm0",
+                "pextrq $1,%xmm1,%rax",
+                "pcmpeqd %xmm1,%xmm1",
+                "sarq $63,%rax",
+                "pinsrq $1,%rax,%xmm0",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm1",
+                "pxor %xmm0,%xmm0",
+                "pcmpgtd %xmm1,%xmm0",
+                "pcmpeqd %xmm1,%xmm1",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm1",
+                "pxor %xmm0,%xmm0",
+                "pcmpgtw %xmm1,%xmm0",
+                "pcmpeqd %xmm1,%xmm1",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm1",
+                "pxor %xmm0,%xmm0",
+                "pcmpgtb %xmm1,%xmm0",
+                "pcmpeqd %xmm1,%xmm1",
+                "pxor %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        }
+    ]
+}

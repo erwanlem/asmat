@@ -1,0 +1,117 @@
+{
+    "function": "is_nan",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "cmpneqps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "cmpneqpd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pxor %xmm0,%xmm0"
+            ]
+        }
+    ]
+}

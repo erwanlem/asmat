@@ -1,0 +1,125 @@
+{
+    "function": "frac",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "xorps %xmm1,%xmm1",
+                "roundps $3,%xmm0,%xmm2",
+                "cmpneqps %xmm0,%xmm1",
+                "andps %xmm2,%xmm1",
+                "subps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "xorpd %xmm1,%xmm1",
+                "roundpd $3,%xmm0,%xmm2",
+                "cmpneqpd %xmm0,%xmm1",
+                "andpd %xmm2,%xmm1",
+                "subpd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "xorps %xmm0,%xmm0"
+            ]
+        }
+    ]
+}

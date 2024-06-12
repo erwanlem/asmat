@@ -1,0 +1,6 @@
+{
+    "function" : "average",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

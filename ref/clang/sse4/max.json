@@ -1,0 +1,32 @@
+{
+    "function": "max",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "maxps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double",
+                "double"
+            ],
+            "instr": [
+                "maxpd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "int",
+                "int"
+            ],
+            "instr": [
+                "pmaxsd %xmm1,%xmm0"
+            ]
+        }
+    ]
+}

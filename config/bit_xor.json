@@ -1,0 +1,6 @@
+{
+    "function" : "bit_xor",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

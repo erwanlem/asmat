@@ -1,0 +1,93 @@
+{
+    "function": "floor",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "vroundps $1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "vroundpd $1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        }
+    ]
+}

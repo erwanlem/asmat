@@ -1,0 +1,6 @@
+{
+    "function" : "fdim",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

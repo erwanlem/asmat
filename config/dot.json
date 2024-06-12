@@ -1,0 +1,6 @@
+{
+    "function" : "dot",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}

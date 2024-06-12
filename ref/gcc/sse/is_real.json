@@ -1,0 +1,117 @@
+{
+    "function": "is_real",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "movaps .LC11(%rip),%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "movapd .LC12(%rip),%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pcmpeqd %xmm0,%xmm0"
+            ]
+        }
+    ]
+}

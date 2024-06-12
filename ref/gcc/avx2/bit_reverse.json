@@ -1,0 +1,46 @@
+{
+    "function": "bit_reverse",
+    "asm": [
+        {
+            "type": [
+                "int"
+            ],
+            "instr": [
+                "vpand .LC32(%rip),%ymm0,%ymm1",
+                "vpand .LC33(%rip),%ymm0,%ymm4",
+                "vmovdqa .LC34(%rip),%ymm2",
+                "vmovdqa .LC35(%rip),%ymm3",
+                "vpand .LC36(%rip),%ymm0,%ymm0",
+                "vpsllw $1,%ymm1,%ymm1",
+                "vpsllw $1,%ymm4,%ymm4",
+                "vpand %ymm2,%ymm1,%ymm1",
+                "vpand %ymm3,%ymm4,%ymm4",
+                "vpsrlw $1,%ymm0,%ymm0",
+                "vpand .LC11(%rip),%ymm0,%ymm0",
+                "vpaddw %ymm4,%ymm1,%ymm1",
+                "vpor %ymm0,%ymm1,%ymm0",
+                "vpand .LC37(%rip),%ymm0,%ymm1",
+                "vpand .LC38(%rip),%ymm0,%ymm4",
+                "vpand .LC39(%rip),%ymm0,%ymm0",
+                "vpsllw $2,%ymm1,%ymm1",
+                "vpsllw $2,%ymm4,%ymm4",
+                "vpand %ymm3,%ymm4,%ymm4",
+                "vpsrlw $2,%ymm0,%ymm0",
+                "vpand %ymm2,%ymm1,%ymm1",
+                "vpand .LC40(%rip),%ymm0,%ymm0",
+                "vpaddw %ymm4,%ymm1,%ymm1",
+                "vpor %ymm0,%ymm1,%ymm1",
+                "vpand %ymm3,%ymm1,%ymm4",
+                "vpsllw $4,%ymm1,%ymm0",
+                "vpsllw $4,%ymm4,%ymm4",
+                "vpsrlw $4,%ymm1,%ymm1",
+                "vpand %ymm2,%ymm0,%ymm0",
+                "vpand .LC41(%rip),%ymm1,%ymm1",
+                "vpand %ymm3,%ymm4,%ymm2",
+                "vpaddw %ymm2,%ymm0,%ymm0",
+                "vpor %ymm1,%ymm0,%ymm0",
+                "vpshufb .LC42(%rip),%ymm0,%ymm0"
+            ]
+        }
+    ]
+}

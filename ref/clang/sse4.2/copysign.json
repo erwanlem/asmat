@@ -1,0 +1,16 @@
+{
+    "function": "copysign",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "andps .LCPI160_0(%rip),%xmm1",
+                "andps .LCPI160_1(%rip),%xmm0",
+                "orps %xmm1,%xmm0"
+            ]
+        }
+    ]
+}

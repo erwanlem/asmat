@@ -1,0 +1,129 @@
+{
+    "function": "floor",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "cvttps2dq %xmm0,%xmm1",
+                "cvtdq2ps %xmm1,%xmm1",
+                "movaps .LCPI161_0(%rip),%xmm2",
+                "andps %xmm0,%xmm2",
+                "movaps .LCPI161_1(%rip),%xmm3",
+                "movaps %xmm2,%xmm4",
+                "cmpleps %xmm3,%xmm4",
+                "andps %xmm1,%xmm4",
+                "cmpnleps %xmm3,%xmm2",
+                "andps %xmm0,%xmm2",
+                "orps %xmm4,%xmm2",
+                "cmpltps %xmm2,%xmm0",
+                "movaps %xmm0,%xmm1",
+                "andnps %xmm2,%xmm1",
+                "addps .LCPI161_2(%rip),%xmm2",
+                "andps %xmm2,%xmm0",
+                "orps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "cvttsd2si %xmm0,%rax",
+                "movapd %xmm0,%xmm1",
+                "unpckhpd %xmm0,%xmm1",
+                "cvttsd2si %xmm1,%rcx",
+                "xorps %xmm1,%xmm1",
+                "cvtsi2sd %rax,%xmm1",
+                "cvtsi2sd %rcx,%xmm2",
+                "unpcklpd %xmm2,%xmm1",
+                "movapd .LCPI162_0(%rip),%xmm2",
+                "andpd %xmm0,%xmm2",
+                "cmpnlepd .LCPI162_1(%rip),%xmm2",
+                "movapd %xmm0,%xmm3",
+                "andpd %xmm2,%xmm3",
+                "andnpd %xmm1,%xmm2",
+                "orpd %xmm3,%xmm2",
+                "cmpltpd %xmm2,%xmm0",
+                "movapd %xmm0,%xmm1",
+                "andnpd %xmm2,%xmm1",
+                "addpd .LCPI162_2(%rip),%xmm2",
+                "andpd %xmm2,%xmm0",
+                "orpd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        }
+    ]
+}

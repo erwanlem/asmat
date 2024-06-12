@@ -1,0 +1,117 @@
+{
+    "function": "is_real",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "vmovaps .LC1(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "vmovapd .LC5(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": [
+                "vmovdqa .LC6(%rip),%ymm0"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+{
+    "function": "min",
+    "asm": [
+        {
+            "type": [
+                "float",
+                "float"
+            ],
+            "instr": [
+                "minps %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "double",
+                "double"
+            ],
+            "instr": [
+                "minpd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t",
+                "std::int64_t"
+            ],
+            "instr": [
+                "movdqa %xmm0,%xmm2",
+                "pcmpgtq %xmm1,%xmm0",
+                "movdqa %xmm2,%xmm3",
+                "pblendvb %xmm0,%xmm1,%xmm3",
+                "movdqa %xmm3,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t",
+                "std::int32_t"
+            ],
+            "instr": [
+                "pminsd %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t",
+                "std::int16_t"
+            ],
+            "instr": [
+                "pminsw %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t",
+                "std::int8_t"
+            ],
+            "instr": [
+                "pminsb %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movabsq $-9223372036854775808,%rax",
+                "movdqa %xmm1,%xmm4",
+                "movdqa %xmm0,%xmm2",
+                "movq %rax,%xmm3",
+                "movdqa %xmm2,%xmm5",
+                "punpcklqdq %xmm3,%xmm3",
+                "psubq %xmm3,%xmm4",
+                "psubq %xmm3,%xmm0",
+                "pcmpgtq %xmm4,%xmm0",
+                "pblendvb %xmm0,%xmm1,%xmm5",
+                "movdqa %xmm5,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pminud %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pminuw %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pminub %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t",
+                "std::uint64_t"
+            ],
+            "instr": [
+                "movabsq $-9223372036854775808,%rax",
+                "movdqa %xmm1,%xmm4",
+                "movdqa %xmm0,%xmm2",
+                "movq %rax,%xmm3",
+                "movdqa %xmm2,%xmm5",
+                "punpcklqdq %xmm3,%xmm3",
+                "psubq %xmm3,%xmm4",
+                "psubq %xmm3,%xmm0",
+                "pcmpgtq %xmm4,%xmm0",
+                "pblendvb %xmm0,%xmm1,%xmm5",
+                "movdqa %xmm5,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint32_t",
+                "std::uint32_t"
+            ],
+            "instr": [
+                "pminud %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint16_t",
+                "std::uint16_t"
+            ],
+            "instr": [
+                "pminuw %xmm1,%xmm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint8_t",
+                "std::uint8_t"
+            ],
+            "instr": [
+                "pminub %xmm1,%xmm0"
+            ]
+        }
+    ]
+}

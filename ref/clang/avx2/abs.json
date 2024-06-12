@@ -1,0 +1,105 @@
+{
+    "function": "abs",
+    "asm": [
+        {
+            "type": [
+                "float"
+            ],
+            "instr": [
+                "vbroadcastsd .LCPI0_0(%rip),%ymm1",
+                "vandps %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "double"
+            ],
+            "instr": [
+                "vbroadcastsd .LCPI1_0(%rip),%ymm1",
+                "vandps %ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int64_t"
+            ],
+            "instr": [
+                "vpxor %xmm1,%xmm1,%xmm1",
+                "vpsubq %ymm0,%ymm1,%ymm1",
+                "vblendvpd %ymm0,%ymm1,%ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int32_t"
+            ],
+            "instr": [
+                "vpabsd %ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int16_t"
+            ],
+            "instr": [
+                "vpabsw %ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::int8_t"
+            ],
+            "instr": [
+                "vpabsb %ymm0,%ymm0"
+            ]
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint64_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint32_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint16_t"
+            ],
+            "instr": []
+        },
+        {
+            "type": [
+                "std::uint8_t"
+            ],
+            "instr": []
+        }
+    ]
+}

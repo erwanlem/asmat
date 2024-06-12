@@ -1,0 +1,6 @@
+{
+    "function" : "bit_and",
+    "parameters" : [
+        ["arithmetic", "arithmetic"]
+    ]
+}
