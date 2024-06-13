@@ -2,6 +2,7 @@ import os
 import assembly_parser
 import const
 import settings
+import reader
 from compiler import TMP_ASM_FILE_NAME, TMP_CPP_FILE_NAME, TMP_O_FILE_NAME, get_assembler, objdump_process
 
 
@@ -58,10 +59,10 @@ def generate_function(funcName:str, parameters:list, functionId='auto'):
 
     for i in range(0, len(parameters)):
         if i == len(parameters)-1:
-            formal_param += f"eve::wide<{parameters[i]}> a{i}"
+            formal_param += f"{parameters[i]} a{i}"
             real_param += f"a{i}"
         else:
-            formal_param += f"eve::wide<{parameters[i]}> a{i}, "
+            formal_param += f"{parameters[i]} a{i}, "
             real_param += f"a{i}, "
 
     # Code of the temporary function
@@ -139,7 +140,15 @@ def get_functions_instructions(options, functions : list):
 
     clear_tmp()
 
-    full_code = "#include <eve/module/core.hpp>\n\n"
+    headers = ""
+    if options['headers'] == []:
+        for i in reader.read_headers():
+            headers += i + '\n'
+    else:
+        for i in options['headers']:
+            headers += f"#include <{i}>\n"
+
+    full_code = headers
     functions_names = {}
     res_dict = {}
 
@@ -199,6 +208,8 @@ def get_functions_instructions(options, functions : list):
         for i, j in files.items():
             i.wait()
             if method == 'objdump':
+                if i.returncode != 0:
+                    raise Exception("Compilation error : " + i.stderr.read().decode())
                 objdump_process(j[0] + '.s', tmp_o_file=j[0] + '.o')
 
             file_asm = open(j[0] + '.s')
