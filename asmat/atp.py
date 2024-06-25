@@ -1,9 +1,9 @@
 import sys
-import generation
-import files
-import const
+import asmat.generation as generation
+import asmat.dependencies as files
+import asmat.const as const
 import os
-import validation
+import asmat.validation as validation
 
 """
         Assembly Testing Program
@@ -160,10 +160,11 @@ def main(opt):
 
 
 
-def run(argv:list):
-    o = options_to_dict(argv)
-    main(o)
-
+def run():
+    argv = sys.argv
+    
+    options = options_to_dict(argv)
+    main(options)
 
 if __name__ == '__main__':
     argv = sys.argv
