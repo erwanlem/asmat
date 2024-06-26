@@ -2,6 +2,9 @@ import asmat.const as const
 
 
 class setup:
+    """Class that represents options to input. Call method `help()` for details.
+    """
+
 
     def __init__(self) -> None:
         self.log = False
@@ -21,6 +24,12 @@ class setup:
         self.headers = []
 
     def get_dictionary(self):
+        """Returns dictionary with all options for generation, validation and analysis
+
+        Returns:
+            dict: Dictionary with user options
+        """
+
         d = {
             "validate" : False,
             "log" : self.log,
@@ -43,6 +52,8 @@ class setup:
         return d
     
     def help(self):
+        """Gives details about options
+        """
         print("Options:")
         print("\t**log** : Boolean. True to generate log file if an error occurs. Defaults to False.")
         print("\t**deep** : Boolean. True to replace files previously referenced. Defaults to False.")

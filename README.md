@@ -2,11 +2,9 @@
 
 ## Name
 
-asmat - Assembly Testing Program
+asmat - Assembly Analysis and Testing
 
 ## Description
-
-> Version <= 0.4.2 : Analysis is not available yet. 
 
 **ASMAT** is a testing and analysis tool made for checking assembly code efficency. This tool offers three main actions: **generation**, **validation** and **analysis**.
 The generation phase generates reference assembly code. This code is stored in a reference folder.

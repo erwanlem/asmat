@@ -231,6 +231,6 @@ def read_reference_files(file_name:str, path="test/asm/ref"):
 
 
 if __name__ == '__main__':
-    pass
-    #read_config_file()
+    #pass
+    read_config_file("abs.json")
     #print(read_reference_files('abs'))

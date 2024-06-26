@@ -146,7 +146,7 @@ def generate_index(functions):
         dataInstr = data_assembly(i[1])
 
         doc += f'<tr><td><a href="pages/fun{page_index}.html">{i[0]}</a></td><td>{len(i[1])}</td><td>{", ".join(dataInstr["ext"])}</td></tr>'
-        generate_function_page(f"fun{page_index}", i[0], dataInstr)
+        generate_function_page(f"", i[0], dataInstr)
         page_index += 1
 
     doc += "</table></body></html>"
