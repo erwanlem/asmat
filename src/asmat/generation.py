@@ -104,7 +104,7 @@ def generate(options: dict | setup, max_function_files='inf') -> int:
     """
 
     if type(options) == setup:
-        options = options.__get_dictionary()
+        options = options.get_dictionary()
 
     t1 = time.time()
 

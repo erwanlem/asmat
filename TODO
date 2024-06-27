@@ -1,4 +1,5 @@
-[ ] Rename jpg images
+[x] Rename jpg images
 [x] Bug type wrapper
 [x] Bug namespace
 [x] Bug function with no parameters
+[ ] Densité arithmétique memory access / instructions

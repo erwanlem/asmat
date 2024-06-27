@@ -24,11 +24,12 @@ COMPILER = {
 
 OPTIONS = {
     "validate" : True,
+    "analyze" : False,
+    "generate" : False,
     "log" : False,
     "deep" : False,
     "input" : 'all',
     "keep_tmp" : False,
-    "generate" : False,
     "exception" : False,
     "verbose" : False,
     "disassembler" : "objdump",
@@ -50,6 +51,3 @@ INTEGER = SIGNED_INTEGER + UNSIGNED_INTEGER
 SIGNED = SIGNED_INTEGER + REAL
 
 ARITHMETIC = REAL + INTEGER + UNSIGNED_INTEGER
-
-
-# Densité arithmétique memory access / instructions

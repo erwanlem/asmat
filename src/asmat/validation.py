@@ -182,7 +182,7 @@ def validate(options : dict | setup, max_function_files='inf') -> int:
         int: 0 if there is no error, otherwise -1.
     """
     if type(options) == setup:
-        options = options.__get_dictionary()
+        options = options.get_dictionary()
     
     
     t1 = time.time()
