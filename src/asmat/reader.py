@@ -55,8 +55,6 @@ def keytypes_to_types(types:list):
     valid_types = []
     
     for t in types:
-        if t == []:
-            continue
 
         if 'arithmetic' in t or 'integer' in t or 'real' in t or 'unsigned' in t:
             if 'arithmetic' in t:
@@ -164,7 +162,6 @@ def read_config_file(file_name='all'):
             txt = load_json(f"{const.root}/config/{f}")
             function = json.loads(txt)
             d[function['function']] = keytypes_to_types(function['parameters'])
-        print
         return d
     else:
         g = get_groups(file_name)
@@ -185,7 +182,6 @@ def read_config_file(file_name='all'):
                 d[function['function']] = keytypes_to_types(function['parameters'])
             else:
                 raise Exception(f"Configuration file {n} not found.")
-        print(d)
         return d
         
 

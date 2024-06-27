@@ -24,6 +24,13 @@
                 "absmin.json",
                 "absmax.json"
             ]
+        },
+        {
+            "name" : "test",
+            "files": [
+                "abs.json",
+                "absmin.json"
+            ]
         }
     ],
     "headers": [

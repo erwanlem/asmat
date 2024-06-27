@@ -1,4 +1,5 @@
 import sys
+sys.path.append("/home/erwan/eve/test/asm/src")
 import asmat.generation as generation
 import asmat.dependencies as files
 import asmat.const as const

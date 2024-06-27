@@ -1,7 +1,8 @@
 import os
-#import sys
+import sys
+sys.path.append("/home/erwan/eve/test/asm/src")
 import  asmat.analysis.analysis_output as analysis_output
-#sys.path.append(f"{os.path.dirname(__file__)}/..")
+
 import asmat.instructions as instructions
 import asmat.const as const
 import asmat.reader as reader
@@ -28,14 +29,7 @@ def analyze(options:dict, compiler:str, cpu_ext:str):
     functions = sorted( list(instr.keys()) )
     for i in functions:
         for j in instr[i]:
-            param = ""
-            for p in range(0, len(j['type'])):
-                if p == len(j['type'])-1 or len(j['type']) == 0:
-                    param += j['type'][p]
-                else:
-                    param += j['type'][p] + ', '
-
-            index.append((f"{i}({param})", j['instr']))
+            index.append((i, j['type'], j['instr']))
 
     if not os.path.exists(f"{const.root}/output"):
         os.mkdir(f"{const.root}/output")
