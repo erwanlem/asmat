@@ -108,15 +108,15 @@ def generate(options: dict | setup, max_function_files='inf') -> int:
         int: 0 if there is no error, otherwise -1.
     """
 
+    if type(options) == setup:
+            options = options.get_dictionary()
+
     acc_settings_output = 0
 
     for i in options['settings']:
         const.settings = i
         if options['verbose']:
             print(f"Running {i}")
-
-        if type(options) == setup:
-            options = options.get_dictionary()
 
         t1 = time.time()
 
