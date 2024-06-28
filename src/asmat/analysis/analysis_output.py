@@ -1,8 +1,10 @@
 import os
-import sys
+if __name__ == "__main__":
+    import sys
+    sys.path.append("/home/erwan/eve/test/asm/src")
 import re
-from .parse_html import is_extension_instruction, instruction_categories
-#sys.path.append(f"{os.path.dirname(__file__)}/..")
+
+from asmat.analysis.parse_html import is_extension_instruction, instruction_categories
 import asmat.const as const
 import matplotlib.pyplot as plt
 
@@ -130,8 +132,6 @@ def generate_function_page(page_name:str, function:str, dataInstr:dict):
 
 
 
-
-
 def generate_index(functions):
 
     if not os.path.exists(f"{const.root}/output/index.html"):
@@ -143,8 +143,8 @@ def generate_index(functions):
         <th>Instructions</th><th>Extensions</th></tr>"
 
     for i in functions:
-        page_name = i[0] + '_'.join( map(lambda i : i if i.isalnum() else '_' , i[1]) )
         function_name = f"{i[0]}({', '.join(i[1])})"
+        page_name = ''.join( map(lambda i : i if i.isalnum() else '_' , function_name) )
 
         dataInstr = data_assembly(i[2])
 
@@ -156,10 +156,9 @@ def generate_index(functions):
     f.write(DOCUMENT_STYLE + doc)
     f.close()
 
-    
 
 
 
 
 if __name__ == '__main__':
-    pass
+    print(''.join( map(lambda i : i if i.isalnum() else '_' , "res_defined_array(int*)")) )
