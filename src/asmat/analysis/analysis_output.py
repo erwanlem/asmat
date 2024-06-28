@@ -143,7 +143,7 @@ def generate_index(functions):
         <th>Instructions</th><th>Extensions</th></tr>"
 
     for i in functions:
-        page_name = i[0] + '_'.join(i[1]).replace(":", "_").replace("<", "_").replace(">", "_")
+        page_name = i[0] + '_'.join( map(lambda i : i if i.isalnum() else '_' , i[1]) )
         function_name = f"{i[0]}({', '.join(i[1])})"
 
         dataInstr = data_assembly(i[2])
