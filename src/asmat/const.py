@@ -4,6 +4,7 @@ root = os.getcwd()
 
 settings = f"{root}/settings.json"
 
+VERSION = "1.1.0"
 
 ARCH = {
     'sse' : '-msse', 
@@ -40,7 +41,8 @@ OPTIONS = {
     "output" : f"{root}/ref",
     "limit_per_file" : 'inf',
     "nbprocess" : 0,
-    "headers" : []
+    "headers" : [],
+    "settings" : [f"{root}/settings.json"]
 }
 
 

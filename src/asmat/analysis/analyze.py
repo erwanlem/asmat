@@ -57,6 +57,8 @@ def analyze(options:dict | setup, compiler:str=None, cpu_ext:str=None):
     
     analysis_output.generate_index(index)
 
+    return 0
+
 
 
 

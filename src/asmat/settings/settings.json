@@ -1,0 +1,48 @@
+{
+    "compilers":
+        {
+            "gcc": "g++",
+            "clang": "clang"
+        },
+    "setup":
+        {
+            "sse": "-msse",
+            "sse2": "-msse2",
+            "sse3": "-msse3",
+            "ssse3": "-mssse3",
+            "sse4.1": "-msse4.1",
+            "sse4.2": "-msse4.2",
+            "avx" : "-mavx",
+            "avx2" : "-mavx2",
+            "avx512" : "-march=skylake-avx512" 
+        }, 
+    "groups": [
+        {
+            "name": "abs",
+            "files": [
+                "abs.json",
+                "absmin.json",
+                "absmax.json"
+            ]
+        },
+        {
+            "name" : "test",
+            "files": [
+                "abs.json",
+                "absmin.json"
+            ]
+        }
+    ],
+    "headers": [
+        "<eve/module/core.hpp>"
+    ],
+    "flags": [
+        "-O3",
+        "-msse",
+        "-I",
+        "../../../../include/",
+        "-std=c++20"
+    ],
+    "type_wrapper": "eve::wide<{}>",
+    "function_namespace": "eve::"
+}

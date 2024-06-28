@@ -77,6 +77,11 @@ def options_to_dict(options:list):
             opt["instruction_comparison"] = True
         elif options[i] == '-v':
             opt['verbose'] = True
+        elif options[i] == "--version":
+            print(const.VERSION)
+            opt['validate'] = False
+            opt['generate'] = False
+            opt['analyze'] = False
         elif options[i] == '--fatal':
             opt['exception'] = True
         elif options[i] == '--functionsperfile' or options[i] == '-S':
@@ -97,7 +102,7 @@ def options_to_dict(options:list):
             opt['validate'] = False
             opt['generate'] = False
             opt['analyze'] = False
-            files.build_default_files()
+            files.build_dependencies()
             break
         elif options[i] == "--disassembler" or options[i] == "-D":
             if options[i+1] == 'objdump' or options[i+1] == 'standard':
@@ -127,9 +132,12 @@ def options_to_dict(options:list):
         elif options[i] == '--settings':
             s = options[i+1]
             if os.path.exists(f"{const.root}/{s}"):
-                const.settings = f"{const.root}/{s}"
+                if os.path.isdir(f"{const.root}/{s}"):
+                    opt['settings'] = [f"{const.root}/{s}/{i}" for i in os.listdir(f"{const.root}/{s}")]
+                else:
+                    opt['settings'] = [f"{const.root}/{s}"]
             elif os.path.exists(s):
-                const.settings = s
+                opt['settings'] = [s]
             else:
                 raise Exception("Invalid settings path")
             i += 1
@@ -149,7 +157,7 @@ def options_to_dict(options:list):
             if len(lst) == 0:
                 raise Exception("Parameter missing for option --header")
             opt['headers'] = lst
-                
+
         else:
             raise Exception(f"Invalid option {options[i]}")
         i+=1
@@ -173,7 +181,7 @@ def run():
     argv = sys.argv
     
     options = options_to_dict(argv)
-    main(options)
+    return main(options)
 
 if __name__ == '__main__':
     run()

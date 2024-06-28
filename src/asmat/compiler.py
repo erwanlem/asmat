@@ -3,7 +3,7 @@ import os
 import asmat.const as const
 import asmat.settings as settings
 
-TMP_CPP_FILE_NAME = f"{const.root}/tmp.cpp"
+TMP_CPP_FILE_NAME = f"{const.root}/tmp/tmp.cpp"
 TMP_O_FILE_NAME = f"{const.root}/tmp/tmp.o"
 TMP_ASM_FILE_NAME = f"{const.root}/tmp/tmp.s"
 
