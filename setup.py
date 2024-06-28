@@ -11,7 +11,7 @@ setuptools.setup(
   include_package_data=True,
   package_dir={"":"src"},
   package_data={"": ["*.db"]},
-  version = VERSION,      # Start with a small number and increase it with every change you make
+  version = "1.1.1",      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Assembly Testing and Analysis',   # Give a short description about your library
   long_description=long_description,

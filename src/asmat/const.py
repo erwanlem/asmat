@@ -4,7 +4,7 @@ root = os.getcwd()
 
 settings = f"{root}/settings.json"
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 
 ARCH = {
     'sse' : '-msse', 

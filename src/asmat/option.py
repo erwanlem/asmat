@@ -22,6 +22,7 @@ class setup:
         self.limit_file = 'inf'
         self.nbprocess = 0
         self.headers = []
+        self.settings = [f"{const.root}/settings.json"]
 
     def get_dictionary(self):
         """Returns dictionary with all options for generation, validation and analysis
@@ -47,7 +48,8 @@ class setup:
             "output" : self.output,
             "limit_per_file" : self.limit_file,
             "nbprocess" : self.nbprocess,
-            "headers" : self.headers
+            "headers" : self.headers,
+            "settings" : self.settings
         }
         return d
     
