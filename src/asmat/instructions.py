@@ -92,7 +92,7 @@ def clear_tmp():
 
 
 
-def extract_instructions(functionName:str, parameters:str, func_code_name:dict, asm:str, method='objdump', compiler:str='gcc'):
+def extract_instructions(functionName:str, parameters:str, func_code_name:dict, asm:str, opt:dict, compiler:str='gcc'):
     """Extracts assembly instructions from objdump files.
 
     Args:
@@ -117,8 +117,13 @@ def extract_instructions(functionName:str, parameters:str, func_code_name:dict, 
 
     function_name = func_code_name[new_name]
 
-    if method == 'objdump':
-        return assembly_parser.read_objdump_assembler(function_name, asm)
+    if opt['disassembler'] == 'objdump':
+        if opt['instr_set'].upper() == 'X86':
+            return assembly_parser.read_objdump_x86_assembler(function_name, asm)
+        elif opt['instr_set'].upper() == 'ARM':
+            return assembly_parser.read_objdump_arm_assembler(function_name, asm)
+        else:
+            raise Exception("Invalid instruction set. Possible values are 'X86' and 'ARM'")
     else:
         return assembly_parser.read_compiler_assembler(function_name, asm, compiler=compiler)
 
@@ -221,9 +226,9 @@ def get_functions_instructions(options, functions : list):
 
             for f, p in functions:
                 if f not in res_dict[j[1]][j[2]].keys():
-                    res_dict[j[1]][j[2]][f] = [{"type" : p, "instr" : extract_instructions(f, p, functions_names, asm, method=method, compiler=j[1])}]
+                    res_dict[j[1]][j[2]][f] = [{"type" : p, "instr" : extract_instructions(f, p, functions_names, asm, options, compiler=j[1])}]
                 else:
-                    res_dict[j[1]][j[2]][f].append({"type" : p, "instr" : extract_instructions(f, p, functions_names, asm, method=method, compiler=j[1])})
+                    res_dict[j[1]][j[2]][f].append({"type" : p, "instr" : extract_instructions(f, p, functions_names, asm, options, compiler=j[1])})
 
 
 

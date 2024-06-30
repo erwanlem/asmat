@@ -1,6 +1,7 @@
 {
     "compilers":
         {
+            
             "gcc": "g++",
             "clang": "clang"
         },
@@ -44,5 +45,6 @@
         "-std=c++20"
     ],
     "type_wrapper": "eve::wide<{}>",
-    "function_namespace": "eve::"
+    "function_namespace": "eve::",
+    "instruction_set": "x86"
 }
