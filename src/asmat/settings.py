@@ -110,7 +110,7 @@ def get_target(options:dict):
     
     settings = reader.load_json(const.settings)
     settings = json.loads(settings)
-    d['twrapper'] = settings['type_wrapper']
+    d['twrapper'] = settings['type_wrapper'] if settings['type_wrapper'].replace(" ", "") != "" else "{}"
     d['namespace'] = settings['function_namespace']
     d['instr_set'] = settings['instruction_set']
 

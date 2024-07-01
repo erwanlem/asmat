@@ -68,7 +68,6 @@ def get_assembler(input_path, output_path, compiler='g++', method='objdump', set
             return p1
 
     else:
-        print([compiler, input_path, '-c', '-o', tmp_o_file] + settings.get_flags() + setup)
         if default_options:
             p1 = subprocess.Popen([compiler, '-S', input_path, '-o', output_path] + settings.get_flags() + setup)
         else:
