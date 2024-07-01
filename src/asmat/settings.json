@@ -1,8 +1,8 @@
 {
+    "instruction_set": "arm",
     "compilers":
         {
-            "clang": "clang",
-            "gcc": "g++"
+            "gcc" : "g++"
         },
     "setup":
         {
@@ -37,6 +37,5 @@
         "-Wno-psabi"
     ],
     "type_wrapper": "eve::wide<{}>",
-    "function_namespace": "eve::",
-    "instruction_set": "x86"
+    "function_namespace": "eve::"
 }
