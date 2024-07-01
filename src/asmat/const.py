@@ -42,7 +42,7 @@ OPTIONS = {
     "limit_per_file" : 'inf',
     "nbprocess" : 0,
     "headers" : [],
-    "settings" : [f"{root}/settings.json"]
+    "settings" : [f"{root}/settings.json"],
 }
 
 
